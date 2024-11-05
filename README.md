@@ -1,5 +1,5 @@
 # ComfyUI_InstantIR
-You can InstantIR to upsacel image in ComfyUI ，[InstantIR](https://github.com/instantX-research/InstantIR):Blind Image Restoration with Instant Generative Reference
+You can InstantIR to Fix blurry photos in ComfyUI ，[InstantIR](https://github.com/instantX-research/InstantIR):Blind Image Restoration with Instant Generative Reference
 
 ----
 
