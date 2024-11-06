@@ -16,28 +16,26 @@ pip install -r requirements.txt
 ```
 
 3.checkpoints 
-3.1 
-any SDXL checkpoint  
-3.2  
-[InstantIR](https://huggingface.co/InstantX/InstantIR)  
+----
+3.1 any SDXL checkpoint   
+3.2 InstantIR checkpoints [InstantIR](https://huggingface.co/InstantX/InstantIR)   
 ```
 ├── ComfyUI/models/InstantIR/models
 |     ├── adapter.pt
 |     ├── aggregator.pt
 |     ├──previewer_lora_weights.bin
 ```
-3.3 dino   
-online or any local path  
-[dinov2-large](https://huggingface.co/facebook/dinov2-large)  
-3.4 lcm lora 
-[lcm-lora-sdxl](https://huggingface.co/latent-consistency/lcm-lora-sdxl)  
+3.3 dino: online or any local path  [dinov2-large](https://huggingface.co/facebook/dinov2-large)  
+3.4 lcm lora [lcm-lora-sdxl](https://huggingface.co/latent-consistency/lcm-lora-sdxl)   
 
 ----
 
-4. Example
-----      
+4.Example
+----   
+
 ![](https://github.com/smthemex/ComfyUI_InstantIR/blob/main/example.png)
 
+----  
 
 5.Citation
 ------
