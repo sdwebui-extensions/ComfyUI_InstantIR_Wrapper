@@ -1,0 +1,15 @@
+[project]
+name = "comfyui_instantir_wrapper"
+description = "You can InstantIR to Fix blurry photos in ComfyUI ，InstantIR:Blind Image Restoration with Instant Generative Reference"
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["diffusers", "#accelerate==0.25.0", "#datasets==2.19.1", "#einops==0.8.0", "kornia", "#numpy==1.26.4", "#opencv-python==4.9.0.80", "#peft==0.10.0", "#pyrallis==0.3.1", "#tokenizers==0.15.2", "#torch", "#torchvision==0.15.2", "#transformers==4.36.2", "#gradio==4.44.1"]
+
+[project.urls]
+Repository = "https://github.com/smthemex/ComfyUI_InstantIR_Wrapper"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "smthemex"
+DisplayName = "ComfyUI_InstantIR_Wrapper"
+Icon = ""
