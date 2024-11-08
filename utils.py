@@ -6,25 +6,12 @@ import os
 import torch
 import numpy as np
 from huggingface_hub import hf_hub_download
-
 from .schedulers.lcm_single_step_scheduler import LCMSingleStepScheduler
-from diffusers import (
-    DDPMScheduler,
-    StableDiffusionXLPipeline
-)
+from diffusers import DDPMScheduler
 
-from transformers import (
-    CLIPImageProcessor, CLIPVisionModelWithProjection,
-    AutoImageProcessor, AutoModel
-)
-
-from .module.ip_adapter.utils import init_adapter_in_unet
-from .module.ip_adapter.resampler import Resampler
-from .pipelines.sdxl_instantir import InstantIRPipeline, PREVIEWER_LORA_MODULES, LCM_LORA_MODULES
+from .pipelines.sdxl_instantir import InstantIRPipeline
 from .module.ip_adapter.utils import load_adapter_to_pipe
-
 from comfy.utils import common_upscale,ProgressBar
-import folder_paths
 
 if torch.cuda.is_available():
     torch_dtype = torch.float16
@@ -32,8 +19,6 @@ else:
     torch_dtype = torch.float32
     
 cur_path = os.path.dirname(os.path.abspath(__file__))
-#device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
-
 
 def name_unet_submodules(unet):
     def recursive_find_module(name, module, end=False):
@@ -111,8 +96,6 @@ def auto_downlaod(current_path,repo):
                 )
         return dino_path
         
-
-
 def instantIR_load_model(use_clip_encoder,vision_encoder_path,sdxl_path,adapter_path,previewer_lora_path,lora_path,aggregator_path,device):
     
     # Base models.
