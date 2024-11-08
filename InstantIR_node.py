@@ -99,7 +99,9 @@ class InstantIR_Loader:
                                      previewer_lora_path,lora_path, aggregator_path, device)
         
         logging.info("loading checkpoint done.")
+        
         if low_vram and not torch.backends.mps.is_available():
+            model.to(dtype=torch_dtype)
             model.enable_model_cpu_offload() #MPS not support
         else:
             model.to(device=device, dtype=torch_dtype)
