@@ -27,6 +27,13 @@ try:
 except:
     folder_paths.add_model_folder_path("InstantIR", InstantIR_current_path)
 
+if os.path.exists(folder_paths.cache_dir):
+    InstantIR_current_path = os.path.join(folder_paths.cache_dir, "InstantIR")
+    try:
+        folder_paths.add_model_folder_path("InstantIR", InstantIR_current_path, False)
+    except:
+        folder_paths.add_model_folder_path("InstantIR", InstantIR_current_path)
+
 InstantIR_base_path = os.path.join(InstantIR_current_path, "models")  # InstantIR/models
 if not os.path.exists(InstantIR_base_path):
     os.makedirs(InstantIR_base_path)
@@ -68,6 +75,9 @@ class InstantIR_Loader:
             vision_encoder_path = auto_downlaod(InstantIR_current_path, "dino")
         else:
             vision_encoder_path = dino_repo
+        
+        if os.path.exists(os.path.join(InstantIR_current_path, "dino")):
+            vision_encoder_path = os.path.join(InstantIR_current_path, "dino")
         
         if sdxl_checkpoints != "none":
             sdxl_path = folder_paths.get_full_path("checkpoints", sdxl_checkpoints)
