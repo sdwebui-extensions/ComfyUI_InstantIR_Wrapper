@@ -28,7 +28,7 @@ except:
     folder_paths.add_model_folder_path("InstantIR", InstantIR_current_path)
 
 if os.path.exists(folder_paths.cache_dir):
-    InstantIR_current_path = os.path.join(folder_paths.cache_dir, "InstantIR")
+    InstantIR_current_path = os.path.join(folder_paths.cache_dir, "models/InstantIR")
     try:
         folder_paths.add_model_folder_path("InstantIR", InstantIR_current_path, False)
     except:
